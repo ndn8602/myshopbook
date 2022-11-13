@@ -1,0 +1,39 @@
+.card {
+  width: 18rem;
+}
+.card > a img {
+  height: 15rem;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 1rem;
+  transition: 0.5s ease;
+}
+.card:hover > a img {
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+
+.brand-book {
+  height: 40rem;
+  overflow: hidden;
+}
+
+.carousel {
+  height: 100%;
+}
+.carousel-inner {
+  height: 100%;
+}
+.carousel-item {
+  height: 100%;
+}
+.carousel-control-next, .carousel-control-prev {
+  width: 5%;
+}
+.carousel-caption {
+  padding: 0;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-10%);
+}/*# sourceMappingURL=style.css.map */
