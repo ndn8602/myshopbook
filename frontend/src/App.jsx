@@ -35,6 +35,7 @@ import UserListScreen from "./screens/UserListScreen";
 import UserEditScreen from "./screens/UserEditScreen";
 import MapScreen from "./screens/MapScreen";
 import "./sass/style.css";
+import { Col, Form, Row } from "react-bootstrap";
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -75,8 +76,8 @@ function App() {
         }
       >
         <ToastContainer position="bottom-center" limit={1} />
-        <header sticky="top">
-          <Navbar bg="dark" variant="dark" expand="lg"  >
+        <header className="header" >
+          <Navbar sticky="top" bg="dark" variant="dark" expand="lg">
             <Container>
               <Button
                 variant="dark"
@@ -93,10 +94,10 @@ function App() {
                 <SearchBox />
                 <Nav className="me-auto  w-100  justify-content-end">
                   <Link to="/cart" className="nav-link">
-                    Cart
+                  <i className="fa-solid fa-bag-shopping"></i>
                     {cart.cartItems.length > 0 && (
                       <Badge pill bg="danger">
-                        {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                        {cart.cartItems.length}
                       </Badge>
                     )}
                   </Link>
@@ -150,7 +151,7 @@ function App() {
               : "side-navbar d-flex justify-content-between flex-wrap flex-column"
           }
         >
-          <Nav className="flex-column text-white w-100 p-2">
+          <Nav className="flex-column text-white w-100 p-2" >
             <Nav.Item>
               <strong>Categories</strong>
             </Nav.Item>
@@ -167,106 +168,138 @@ function App() {
           </Nav>
         </div>
         <main>
-            <Routes>
-              <Route path="/product/:slug" element={<ProductScreen />} />
-              <Route path="/cart" element={<CartScreen />} />
-              <Route path="/search" element={<SearchScreen />} />
-              <Route path="/signin" element={<SigninScreen />} />
-              <Route path="/signup" element={<SignupScreen />} />
-              <Route
-                path="/profile"
-                element={
-                  <ProtectedRoute>
-                    <ProfileScreen />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/map"
-                element={
-                  <ProtectedRoute>
-                    <MapScreen />
-                  </ProtectedRoute>
-                }
-              />
-              <Route path="/placeorder" element={<PlaceOrderScreen />} />
-              <Route
-                path="/order/:id"
-                element={
-                  <ProtectedRoute>
-                    <OrderScreen />
-                  </ProtectedRoute>
-                }
-              ></Route>
-              <Route
-                path="/orderhistory"
-                element={
-                  <ProtectedRoute>
-                    <OrderHistoryScreen />
-                  </ProtectedRoute>
-                }
-              ></Route>
-              <Route
-                path="/shipping"
-                element={<ShippingAddressScreen />}
-              ></Route>
-              <Route path="/payment" element={<PaymentMethodScreen />}></Route>
-              {/* Admin Routes */}
-              <Route
-                path="/admin/dashboard"
-                element={
-                  <AdminRoute>
-                    <DashboardScreen />
-                  </AdminRoute>
-                }
-              ></Route>
-              <Route
-                path="/admin/orders"
-                element={
-                  <AdminRoute>
-                    <OrderListScreen />
-                  </AdminRoute>
-                }
-              ></Route>
-              <Route
-                path="/admin/users"
-                element={
-                  <AdminRoute>
-                    <UserListScreen />
-                  </AdminRoute>
-                }
-              ></Route>
-              <Route
-                path="/admin/products"
-                element={
-                  <AdminRoute>
-                    <ProductListScreen />
-                  </AdminRoute>
-                }
-              ></Route>
-              <Route
-                path="/admin/product/:id"
-                element={
-                  <AdminRoute>
-                    <ProductEditScreen />
-                  </AdminRoute>
-                }
-              ></Route>
-              <Route
-                path="/admin/user/:id"
-                element={
-                  <AdminRoute>
-                    <UserEditScreen />
-                  </AdminRoute>
-                }
-              ></Route>
+          <Routes>
+            <Route path="/product/:slug" element={<ProductScreen />} />
+            <Route path="/cart" element={<CartScreen />} />
+            <Route path="/search" element={<SearchScreen />} />
+            <Route path="/signin" element={<SigninScreen />} />
+            <Route path="/signup" element={<SignupScreen />} />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <ProfileScreen />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/map"
+              element={
+                <ProtectedRoute>
+                  <MapScreen />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/placeorder" element={<PlaceOrderScreen />} />
+            <Route
+              path="/order/:id"
+              element={
+                <ProtectedRoute>
+                  <OrderScreen />
+                </ProtectedRoute>
+              }
+            ></Route>
+            <Route
+              path="/orderhistory"
+              element={
+                <ProtectedRoute>
+                  <OrderHistoryScreen />
+                </ProtectedRoute>
+              }
+            ></Route>
+            <Route path="/shipping" element={<ShippingAddressScreen />}></Route>
+            <Route path="/payment" element={<PaymentMethodScreen />}></Route>
+            {/* Admin Routes */}
+            <Route
+              path="/admin/dashboard"
+              element={
+                <AdminRoute>
+                  <DashboardScreen />
+                </AdminRoute>
+              }
+            ></Route>
+            <Route
+              path="/admin/orders"
+              element={
+                <AdminRoute>
+                  <OrderListScreen />
+                </AdminRoute>
+              }
+            ></Route>
+            <Route
+              path="/admin/users"
+              element={
+                <AdminRoute>
+                  <UserListScreen />
+                </AdminRoute>
+              }
+            ></Route>
+            <Route
+              path="/admin/products"
+              element={
+                <AdminRoute>
+                  <ProductListScreen />
+                </AdminRoute>
+              }
+            ></Route>
+            <Route
+              path="/admin/product/:id"
+              element={
+                <AdminRoute>
+                  <ProductEditScreen />
+                </AdminRoute>
+              }
+            ></Route>
+            <Route
+              path="/admin/user/:id"
+              element={
+                <AdminRoute>
+                  <UserEditScreen />
+                </AdminRoute>
+              }
+            ></Route>
 
-              <Route path="/" element={<HomeScreen />} />
-            </Routes>
+            <Route path="/" element={<HomeScreen />} />
+          </Routes>
         </main>
-        <footer>
-          <div className="text-center">All rights reserved</div>
-        </footer>
+        <footer></footer>
+      </div>
+      <footer className="footer">
+        <Container>
+          <Row>
+            <Col md={4}>
+              <div className="footer-info">
+                <h2 className="display-3">BookShop</h2>
+                <p>
+                  Address : 273 An D. Vương, Phường 3, Quận 5, Thành phố Hồ Chí
+                  Minh
+                </p>
+                <p>Phone Number : 09999999999 </p>
+                <p>Email : ducnham.it86@gmail.com</p>
+              </div>
+            </Col>
+            <Col md={8}>
+              <Form className="footer-form">
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control type="email" placeholder="Enter email" />
+                </Form.Group>
+                <Form.Control
+                  className="footer-textarea"
+                  as="textarea"
+                  placeholder="Leave a comment here"
+                  style={{ height: "100px" }}
+                />
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+              </Form>
+            </Col>
+          </Row>
+        </Container>
+      </footer>
+      <div className="text-center">
+        &copy; Website made by ducnham.it86@gmail.com
       </div>
     </BrowserRouter>
   );

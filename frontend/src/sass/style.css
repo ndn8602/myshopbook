@@ -1,6 +1,54 @@
-.card {
-  width: 18rem;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  font-family: "Roboto", sans-serif;
+  vertical-align: baseline;
 }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 .card > a img {
   height: 15rem;
   width: 100%;
@@ -12,6 +60,48 @@
 .card:hover > a img {
   transform: scale(1.1);
   transition: 0.5s ease;
+}
+.card-body {
+  padding: 0 1rem;
+}
+.card-body a {
+  text-decoration: none;
+}
+.card-title {
+  font-size: 1rem;
+  height: 2.5rem;
+}
+.card-price {
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+.card-btnAddToCard, .card-btnView {
+  width: 100%;
+}
+.card-desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.authorRating {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  height: auto;
+}
+.modal-price {
+  margin: 0.3rem 0;
+  font-weight: 500;
+  font-size: 2.4rem;
 }
 
 .brand-book {
@@ -36,4 +126,41 @@
   top: 50%;
   left: 5%;
   transform: translateY(-10%);
+}
+
+.row {
+  margin: 1rem 0;
+}
+
+.aboutMyShop {
+  margin: 1.5rem 0;
+}
+
+.filterTool {
+  padding: 1rem;
+  border-radius: 0 15px 15px 0;
+  box-shadow: rgba(210, 210, 210, 0.043) 1.95px 1.95px 2.6px;
+}
+.filterTool > div {
+  margin: 1rem 0;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2156862745);
+}
+.filterTool > div > h3 {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.filterTool > div > ul > li {
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.formsas-container form > h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5rem;
+}
+
+.form-container form > h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5rem;
 }/*# sourceMappingURL=style.css.map */

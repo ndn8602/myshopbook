@@ -132,9 +132,9 @@ export default function SearchScreen() {
       <Helmet>
         <title>Search Products</title>
       </Helmet>
-      <Row>
-        <Col md={3}>
-          <h3>Department</h3>
+      <Row className='m-0'>
+        <Col md={3} className='filterTool'>
+          <h3 className='display-6 '>Department</h3>
           <div>
             <ul>
               <li>

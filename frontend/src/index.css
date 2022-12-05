@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -16,6 +16,8 @@ main {
 .btn-outline-primary {
   background-color: #f0c040;
   color: #000000;
+  outline: none;
+  border: none;
 }
 .products {
   display: flex;
@@ -66,7 +68,7 @@ main {
   height: 100%;
   position: absolute;
   left: -300px;
-  background-color: #100901;
+  background-color: #5c5c5ca0;
   transition: 0.5s;
 }
 
@@ -124,4 +126,20 @@ main {
 }
 button.thumbnail {
   padding: 0;
+}
+.footer {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  background-color: #404040;
+  color: #ffffff;
+}
+.footer-form .footer-textarea {
+  margin-bottom: 1rem;
+}
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
