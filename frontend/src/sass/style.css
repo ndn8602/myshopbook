@@ -49,6 +49,9 @@ table {
   border-spacing: 0;
 }
 
+.card {
+  height: 32rem;
+}
 .card > a img {
   height: 15rem;
   width: 100%;
