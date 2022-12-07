@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useReducer } from 'react';
+import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
@@ -88,11 +89,11 @@ export default function UserListScreen() {
     }
   };
   return (
-    <div>
+    <Container>
       <Helmet>
         <title>Users</title>
       </Helmet>
-      <h1>Users</h1>
+      <h1 className="my-3 display-5 font-weight-bold ">Users</h1>
 
       {loadingDelete && <LoadingBox></LoadingBox>}
       {loading ? (
@@ -139,6 +140,6 @@ export default function UserListScreen() {
           </tbody>
         </table>
       )}
-    </div>
+    </Container>
   );
 }

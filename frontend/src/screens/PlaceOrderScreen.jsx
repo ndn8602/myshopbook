@@ -40,7 +40,9 @@ export default function PlaceOrderScreen() {
   cart.itemsPrice = round2(
     cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
   );
+  console.log(`round ${round2}`);
   cart.shippingPrice = cart.itemsPrice > 100 ? round2(0) : round2(10);
+  console.log(`shipping ${cart.itemsPrice} ${cart.shippingPrice}`); 
   cart.taxPrice = round2(0.15 * cart.itemsPrice);
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
 
@@ -121,7 +123,10 @@ export default function PlaceOrderScreen() {
                 {cart.cartItems.map((item) => (
                   <ListGroup.Item key={item._id}>
                     <Row className="d-flex align-items-center justify-content-center">
-                      <Col md={6} className="d-flex align-items-center justify-content-between">
+                      <Col
+                        md={6}
+                        className="d-flex align-items-center justify-content-between"
+                      >
                         <img
                           src={item.image}
                           alt={item.name}

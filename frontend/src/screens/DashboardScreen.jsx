@@ -8,6 +8,7 @@ import MessageBox from "../components/MessageBox";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -50,8 +51,8 @@ export default function DashboardScreen() {
     fetchData();
   }, [userInfo]);
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <Container>
+      <h1 className="display-5 font-weight-bold ">Dashboard</h1>
       {loading ? (
         <LoadingBox />
       ) : error ? (
@@ -99,7 +100,8 @@ export default function DashboardScreen() {
             </Col>
           </Row>
           <div className="my-3">
-            <h2>Sales</h2>
+            <h2 className="display-6 font-weight-bold text-center ">Sales</h2>
+            <hr />
             {summary.dailyOrders.length === 0 ? (
               <MessageBox>No Sale</MessageBox>
             ) : (
@@ -116,7 +118,10 @@ export default function DashboardScreen() {
             )}
           </div>
           <div className="my-3">
-            <h2>Categories</h2>
+            <h2 className="display-6 font-weight-bold text-center ">
+              Categories
+            </h2>
+            <hr />
             {summary.productCategories.length === 0 ? (
               <MessageBox>No Category</MessageBox>
             ) : (
@@ -134,6 +139,6 @@ export default function DashboardScreen() {
           </div>
         </>
       )}
-    </div>
+    </Container>
   );
 }

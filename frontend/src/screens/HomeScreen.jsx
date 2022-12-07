@@ -110,7 +110,7 @@ function HomeScreen() {
         <div className="newletter">
           <Row>
             <Col md={8}>
-              <h4 className="display-4">Best Seller</h4>
+              <h4 className="display-4">NewsLetter</h4>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Reprehenderit ipsa fugiat expedita eligendi ratione architecto

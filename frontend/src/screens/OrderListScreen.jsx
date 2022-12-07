@@ -8,6 +8,7 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
 import { getError } from '../utils';
+import { Container } from 'react-bootstrap';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -88,11 +89,11 @@ export default function OrderListScreen() {
   };
 
   return (
-    <div>
+    <Container>
       <Helmet>
         <title>Orders</title>
       </Helmet>
-      <h1>Orders</h1>
+      <h1 className="my-3 display-5 font-weight-bold ">Orders</h1>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {loading ? (
         <LoadingBox></LoadingBox>
@@ -149,6 +150,6 @@ export default function OrderListScreen() {
           </tbody>
         </table>
       )}
-    </div>
+    </Container>
   );
 }

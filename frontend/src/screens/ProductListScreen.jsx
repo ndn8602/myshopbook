@@ -9,6 +9,7 @@ import { Store } from '../Store';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { getError } from '../utils';
+import { Container } from 'react-bootstrap';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -136,10 +137,10 @@ export default function ProductListScreen() {
   };
 
   return (
-    <div>
+    <Container>
       <Row>
         <Col>
-          <h1>Products</h1>
+          <h1 className='display-6 font-weight-bold   '>Products</h1>
         </Col>
         <Col className="col text-end">
           <div>
@@ -166,6 +167,7 @@ export default function ProductListScreen() {
                 <th>NAME</th>
                 <th>PRICE</th>
                 <th>CATEGORY</th>
+                <th>QUANTITY</th>
                 <th>AUTHOR</th>
                 <th>ACTIONS</th>
               </tr>
@@ -175,8 +177,9 @@ export default function ProductListScreen() {
                 <tr key={product._id}>
                   <td>{product._id}</td>
                   <td>{product.name}</td>
-                  <td>{product.price}</td>
+                  <td>${product.price}</td>
                   <td>{product.category}</td>
+                  <td>{product.countInStock}</td>
                   <td>{product.brand}</td>
                   <td>
                     <Button
@@ -212,6 +215,6 @@ export default function ProductListScreen() {
           </div>
         </>
       )}
-    </div>
+    </Container>
   );
 }

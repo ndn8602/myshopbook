@@ -53,7 +53,7 @@ export default function PaymentMethodScreen() {
               id="Stripe"
               label="Stripe"
               value="Stripe"
-              checked={paymentMethodName === 'Stripe'}
+              checked={paymentMethodName === 'Payment At Home'}
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
           </div>
